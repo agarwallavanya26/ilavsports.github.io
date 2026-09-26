@@ -1,0 +1,1748 @@
+/* =========================================
+   ILAV SPORTS
+   SPORTS DATA ANALYTICS PORTFOLIO
+========================================= */
+
+
+/* =========================================
+   1. COLOR VARIABLES
+========================================= */
+
+:root {
+
+  --navy: #07558c;
+
+  --blue: #087bc1;
+
+  --bright: #27aee8;
+
+  --sky: #c9f2f8;
+
+  --pale: #eafcff;
+
+  --ink: #07121d;
+
+  --white: #ffffff;
+
+  --line: rgba(7, 85, 140, 0.18);
+
+  --shadow:
+    0 18px 50px rgba(0, 67, 115, 0.14);
+
+}
+
+
+/* =========================================
+   2. BASIC RESET
+========================================= */
+
+* {
+
+  box-sizing: border-box;
+
+  margin: 0;
+
+  padding: 0;
+
+}
+
+
+html {
+
+  scroll-behavior: smooth;
+
+}
+
+
+body {
+
+  font-family: "Nunito", sans-serif;
+
+  color: var(--ink);
+
+  background:
+
+    radial-gradient(
+      circle at 80% 5%,
+      rgba(39, 174, 232, 0.18),
+      transparent 25rem
+    ),
+
+    linear-gradient(
+      135deg,
+      #f1fdff 0%,
+      var(--sky) 48%,
+      #d8f7fb 100%
+    );
+
+  overflow-x: hidden;
+
+}
+
+
+a {
+
+  color: inherit;
+
+  text-decoration: none;
+
+}
+
+
+/* =========================================
+   3. BACKGROUND DECORATIONS
+========================================= */
+
+.page-decoration {
+
+  position: fixed;
+
+  z-index: -1;
+
+  width: 22rem;
+
+  height: 22rem;
+
+  border: 2px solid rgba(7, 85, 140, 0.10);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+}
+
+
+.deco-one {
+
+  top: -12rem;
+
+  right: -7rem;
+
+}
+
+
+.deco-two {
+
+  bottom: -14rem;
+
+  left: -9rem;
+
+}
+
+
+/* =========================================
+   4. NAVIGATION BAR
+========================================= */
+
+.navbar {
+
+  width: min(1180px, calc(100% - 40px));
+
+  margin: 18px auto 0;
+
+  padding: 10px 14px 10px 18px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  background: rgba(255, 255, 255, 0.72);
+
+  border: 1px solid rgba(255, 255, 255, 0.9);
+
+  box-shadow:
+    0 8px 30px rgba(0, 66, 110, 0.08);
+
+  border-radius: 18px;
+
+  backdrop-filter: blur(12px);
+
+  position: relative;
+
+  z-index: 10;
+
+}
+
+
+/* Logo */
+
+.brand {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.8px;
+
+}
+
+
+.brand img {
+
+  width: 47px;
+
+  height: 47px;
+
+  object-fit: cover;
+
+  border-radius: 10px;
+
+}
+
+
+.brand b {
+
+  color: var(--blue);
+
+}
+
+
+/* Navigation links */
+
+nav {
+
+  display: flex;
+
+  gap: 34px;
+
+  font-weight: 800;
+
+  font-size: 0.92rem;
+
+}
+
+
+nav a {
+
+  opacity: 0.72;
+
+  transition: 0.2s;
+
+}
+
+
+nav a:hover {
+
+  color: var(--blue);
+
+  opacity: 1;
+
+}
+
+
+/* Explore button */
+
+.nav-button {
+
+  background: var(--navy);
+
+  color: white;
+
+  padding: 12px 19px;
+
+  border-radius: 12px;
+
+  font-weight: 900;
+
+  box-shadow:
+    0 8px 18px rgba(0, 73, 123, 0.2);
+
+  transition:
+    transform 0.2s,
+    background 0.2s;
+
+}
+
+
+.nav-button:hover {
+
+  transform: translateY(-2px);
+
+  background: var(--blue);
+
+}
+
+
+/* =========================================
+   5. HERO SECTION
+========================================= */
+
+.hero {
+
+  width: min(1180px, calc(100% - 40px));
+
+  min-height: 680px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: 1fr 0.9fr;
+
+  align-items: center;
+
+  gap: 30px;
+
+}
+
+
+/* Small heading */
+
+.eyebrow {
+
+  color: var(--navy);
+
+  font-size: 0.76rem;
+
+  letter-spacing: 2.3px;
+
+  font-weight: 900;
+
+  margin-bottom: 18px;
+
+}
+
+
+.eyebrow span {
+
+  display: inline-block;
+
+  width: 28px;
+
+  height: 3px;
+
+  background: var(--bright);
+
+  vertical-align: middle;
+
+  margin-right: 8px;
+
+  border-radius: 9px;
+
+}
+
+
+/* Main hero title */
+
+.hero h1,
+h2 {
+
+  font-family: "Bungee", sans-serif;
+
+  font-weight: 400;
+
+  line-height: 1.05;
+
+  letter-spacing: -1px;
+
+}
+
+
+.hero h1 {
+
+  font-size: clamp(3.3rem, 6vw, 6.2rem);
+
+  max-width: 720px;
+
+}
+
+
+.hero h1 em,
+h2 em {
+
+  color: var(--blue);
+
+  font-style: normal;
+
+}
+
+
+/* Hero description */
+
+.hero-text {
+
+  max-width: 540px;
+
+  margin: 24px 0 28px;
+
+  font-size: 1.05rem;
+
+  line-height: 1.8;
+
+  color: #335268;
+
+}
+
+
+/* Hero buttons */
+
+.hero-actions {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 25px;
+
+}
+
+
+.primary-button {
+
+  background: var(--navy);
+
+  color: white;
+
+  padding: 12px 19px;
+
+  border-radius: 12px;
+
+  font-weight: 900;
+
+  box-shadow:
+    0 8px 18px rgba(0, 73, 123, 0.2);
+
+  transition:
+    transform 0.2s,
+    background 0.2s;
+
+}
+
+
+.primary-button:hover {
+
+  transform: translateY(-2px);
+
+  background: var(--blue);
+
+}
+
+
+.primary-button span {
+
+  margin-left: 10px;
+
+}
+
+
+.text-button {
+
+  font-weight: 900;
+
+  color: var(--navy);
+
+  border-bottom:
+    2px solid var(--bright);
+
+  padding-bottom: 4px;
+
+}
+
+
+/* =========================================
+   6. MINI STATS
+========================================= */
+
+.mini-stats {
+
+  display: flex;
+
+  gap: 30px;
+
+  margin-top: 58px;
+
+}
+
+
+.mini-stats div {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+}
+
+
+.mini-stats strong {
+
+  font-size: 1.35rem;
+
+  color: var(--blue);
+
+}
+
+
+.mini-stats span {
+
+  font-size: 0.72rem;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+
+  font-weight: 900;
+
+  color: #587385;
+
+}
+
+
+/* =========================================
+   7. HERO GRAPHIC
+========================================= */
+
+.hero-art {
+
+  height: 520px;
+
+  position: relative;
+
+  display: grid;
+
+  place-items: center;
+
+}
+
+
+.orb {
+
+  position: absolute;
+
+  border-radius: 50%;
+
+}
+
+
+/* Large blue circle */
+
+.orb-large {
+
+  width: 410px;
+
+  height: 410px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #0b6fae,
+      #20b7ed
+    );
+
+  box-shadow:
+
+    20px 25px 0 rgba(255, 255, 255, 0.55),
+
+    var(--shadow);
+
+}
+
+
+/* Small white circle */
+
+.orb-small {
+
+  width: 130px;
+
+  height: 130px;
+
+  right: 7%;
+
+  top: 8%;
+
+  background: #fff;
+
+  border:
+    17px solid var(--sky);
+
+}
+
+
+/* Logo inside hero */
+
+.hero-logo {
+
+  width: 320px;
+
+  height: 320px;
+
+  background: rgba(255, 255, 255, 0.94);
+
+  border-radius:
+    42% 58% 54% 46%;
+
+  transform: rotate(-5deg);
+
+  display: grid;
+
+  place-items: center;
+
+  box-shadow:
+    0 25px 60px rgba(0, 48, 91, 0.25);
+
+  z-index: 2;
+
+  overflow: hidden;
+
+}
+
+
+.hero-logo img {
+
+  width: 125%;
+
+  height: 125%;
+
+  object-fit: cover;
+
+  transform: rotate(5deg);
+
+}
+
+
+/* =========================================
+   8. FLOATING CARDS
+========================================= */
+
+.floating-card {
+
+  position: absolute;
+
+  z-index: 4;
+
+  padding: 12px 16px;
+
+  background: white;
+
+  border:
+    2px solid var(--navy);
+
+  box-shadow:
+    7px 7px 0 var(--navy);
+
+  font-size: 0.72rem;
+
+  font-weight: 900;
+
+  letter-spacing: 1.2px;
+
+  display: flex;
+
+  gap: 20px;
+
+  align-items: center;
+
+}
+
+
+.card-top {
+
+  top: 10%;
+
+  left: 5%;
+
+  transform: rotate(-7deg);
+
+}
+
+
+.card-bottom {
+
+  bottom: 8%;
+
+  right: 0;
+
+  transform: rotate(5deg);
+
+}
+
+
+/* =========================================
+   9. TOPIC TICKER
+========================================= */
+
+.ticker {
+
+  background: var(--navy);
+
+  color: white;
+
+  padding: 16px 0;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 26px;
+
+  font-weight: 900;
+
+  font-size: 0.74rem;
+
+  letter-spacing: 2px;
+
+}
+
+
+.ticker i {
+
+  color: var(--bright);
+
+  font-style: normal;
+
+}
+
+
+/* =========================================
+   10. GENERAL SECTIONS
+========================================= */
+
+.section {
+
+  width: min(1180px, calc(100% - 40px));
+
+  margin: auto;
+
+  padding: 110px 0;
+
+}
+
+
+.section-heading {
+
+  display: grid;
+
+  grid-template-columns: 1fr 0.65fr;
+
+  gap: 60px;
+
+  align-items: end;
+
+  margin-bottom: 55px;
+
+}
+
+
+.section-heading h2 {
+
+  font-size:
+    clamp(2.3rem, 4vw, 4.4rem);
+
+}
+
+
+.section-intro {
+
+  color: #496779;
+
+  line-height: 1.8;
+
+  max-width: 430px;
+
+  justify-self: end;
+
+}
+
+
+/* =========================================
+   11. PROJECT CAROUSEL
+========================================= */
+
+.carousel-wrap {
+
+  position: relative;
+
+  padding: 0 55px;
+
+}
+
+
+.carousel {
+
+  overflow: hidden;
+
+  border-radius: 28px;
+
+}
+
+
+/* Individual card */
+
+.project-card {
+
+  display: none;
+
+  grid-template-columns:
+    1.05fr 0.95fr;
+
+  min-height: 420px;
+
+  background: white;
+
+  box-shadow: var(--shadow);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.8);
+
+}
+
+
+/* Show active card */
+
+.project-card.active {
+
+  display: grid;
+
+  animation:
+    slideIn 0.45s ease;
+
+}
+
+
+@keyframes slideIn {
+
+  from {
+
+    opacity: 0;
+
+    transform: translateX(20px);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform: translateX(0);
+
+  }
+
+}
+
+
+/* =========================================
+   12. PROJECT VISUAL AREA
+========================================= */
+
+.project-visual {
+
+  position: relative;
+
+  min-height: 420px;
+
+  overflow: hidden;
+
+  padding: 30px;
+
+  display: flex;
+
+  align-items: flex-end;
+
+}
+
+
+/* Project 1 */
+
+.visual-1 {
+
+  background:
+    linear-gradient(
+      135deg,
+      #07558c,
+      #24b9ee
+    );
+
+}
+
+
+/* Project 2 */
+
+.visual-2 {
+
+  background: #d9f7fb;
+
+}
+
+
+/* Project 3 */
+
+.visual-3 {
+
+  background: #0b659f;
+
+}
+
+
+/* Project label */
+
+.project-tag {
+
+  position: absolute;
+
+  top: 26px;
+
+  left: 30px;
+
+  font-size: 0.68rem;
+
+  font-weight: 900;
+
+  letter-spacing: 1.5px;
+
+  padding: 8px 11px;
+
+  background: white;
+
+  color: var(--navy);
+
+  border-radius: 8px;
+
+}
+
+
+/* Project title */
+
+.visual-1 b {
+
+  color: white;
+
+  font-family: "Bungee";
+
+  font-size: 3rem;
+
+  line-height: 1;
+
+  z-index: 2;
+
+}
+
+
+/* =========================================
+   13. BAR CHART GRAPHIC
+========================================= */
+
+.chart-bars {
+
+  position: absolute;
+
+  inset: 100px 40px 50px;
+
+  display: flex;
+
+  align-items: end;
+
+  gap: 15px;
+
+}
+
+
+.chart-bars i {
+
+  flex: 1;
+
+  background:
+    rgba(255, 255, 255, 0.88);
+
+  border-radius:
+    8px 8px 0 0;
+
+}
+
+
+/* =========================================
+   14. BUBBLE CHART GRAPHIC
+========================================= */
+
+.bubble {
+
+  position: absolute;
+
+  border-radius: 50%;
+
+  border:
+    7px solid var(--navy);
+
+  background:
+    rgba(39, 174, 232, 0.72);
+
+}
+
+
+.b1 {
+
+  width: 120px;
+
+  height: 120px;
+
+  left: 20%;
+
+  bottom: 25%;
+
+}
+
+
+.b2 {
+
+  width: 190px;
+
+  height: 190px;
+
+  left: 42%;
+
+  bottom: 12%;
+
+  background:
+    rgba(7, 85, 140, 0.68);
+
+}
+
+
+.b3 {
+
+  width: 70px;
+
+  height: 70px;
+
+  right: 17%;
+
+  top: 25%;
+
+}
+
+
+.b4 {
+
+  width: 100px;
+
+  height: 100px;
+
+  right: 8%;
+
+  bottom: 28%;
+
+  background:
+    rgba(255, 255, 255, 0.7);
+
+}
+
+
+.axis-label {
+
+  position: absolute;
+
+  right: 25px;
+
+  bottom: 20px;
+
+  font-weight: 900;
+
+  color: var(--navy);
+
+}
+
+
+/* =========================================
+   15. DONUT CHART
+========================================= */
+
+.donut {
+
+  width: 240px;
+
+  height: 240px;
+
+  border-radius: 50%;
+
+  margin: auto;
+
+  display: grid;
+
+  place-items: center;
+
+  background:
+    conic-gradient(
+      var(--bright) 0 67%,
+      rgba(255, 255, 255, 0.28) 67% 100%
+    );
+
+  position: relative;
+
+}
+
+
+.donut::after {
+
+  content: "";
+
+  position: absolute;
+
+  width: 145px;
+
+  height: 145px;
+
+  border-radius: 50%;
+
+  background: var(--navy);
+
+}
+
+
+.donut strong {
+
+  z-index: 1;
+
+  color: white;
+
+  font-size: 2.7rem;
+
+}
+
+
+.donut-caption {
+
+  position: absolute;
+
+  left: 30px;
+
+  bottom: 35px;
+
+  color: white;
+
+  font-weight: 900;
+
+  letter-spacing: 2px;
+
+}
+
+
+/* =========================================
+   16. PROJECT INFORMATION
+========================================= */
+
+.project-info {
+
+  padding: 55px 50px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+}
+
+
+.project-info > p:first-child,
+.blog-category {
+
+  color: var(--blue);
+
+  font-size: 0.7rem;
+
+  font-weight: 900;
+
+  letter-spacing: 2px;
+
+}
+
+
+.project-info h3 {
+
+  font-family: "Bungee";
+
+  font-size: 2rem;
+
+  font-weight: 400;
+
+  margin: 13px 0;
+
+  line-height: 1.1;
+
+}
+
+
+.project-info > p:not(:first-child) {
+
+  color: #5b7080;
+
+  line-height: 1.7;
+
+}
+
+
+.project-link {
+
+  margin-top: 25px;
+
+  color: var(--navy);
+
+  font-weight: 900;
+
+}
+
+
+/* =========================================
+   17. CAROUSEL BUTTONS
+========================================= */
+
+.carousel-btn {
+
+  position: absolute;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 46px;
+
+  height: 46px;
+
+  border: 0;
+
+  border-radius: 50%;
+
+  background: var(--navy);
+
+  color: white;
+
+  font-size: 1.2rem;
+
+  cursor: pointer;
+
+  z-index: 3;
+
+  box-shadow:
+    0 7px 18px rgba(0, 60, 100, 0.2);
+
+}
+
+
+.carousel-btn:hover {
+
+  background: var(--blue);
+
+}
+
+
+.prev {
+
+  left: 0;
+
+}
+
+
+.next {
+
+  right: 0;
+
+}
+
+
+/* =========================================
+   18. CAROUSEL DOTS
+========================================= */
+
+.dots {
+
+  display: flex;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  margin-top: 25px;
+
+}
+
+
+.dot {
+
+  width: 8px;
+
+  height: 8px;
+
+  border: 0;
+
+  background: #9bc4d6;
+
+  border-radius: 50%;
+
+  cursor: pointer;
+
+}
+
+
+.dot.active {
+
+  width: 28px;
+
+  border-radius: 9px;
+
+  background: var(--navy);
+
+}
+
+
+/* =========================================
+   19. BLOG SECTION
+========================================= */
+
+.blog-section {
+
+  padding-top: 55px;
+
+}
+
+
+.blog-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    1.25fr 1fr 1fr;
+
+  gap: 18px;
+
+}
+
+
+.blog-card {
+
+  min-height: 330px;
+
+  background:
+    rgba(255, 255, 255, 0.75);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.9);
+
+  border-radius: 22px;
+
+  padding: 30px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  box-shadow:
+    0 10px 35px rgba(0, 70, 110, 0.08);
+
+  transition:
+    transform 0.25s,
+    box-shadow 0.25s;
+
+}
+
+
+.blog-card:hover {
+
+  transform: translateY(-7px);
+
+  box-shadow: var(--shadow);
+
+}
+
+
+/* Featured blog */
+
+.featured-blog {
+
+  background: var(--navy);
+
+  color: white;
+
+}
+
+
+/* Blog number */
+
+.blog-number {
+
+  font-family: "Bungee";
+
+  font-size: 2.4rem;
+
+  color: var(--bright);
+
+  margin-bottom: auto;
+
+}
+
+
+.featured-blog .blog-category {
+
+  color: #8ee5ff;
+
+}
+
+
+.blog-card h3 {
+
+  font-family: "Bungee";
+
+  font-weight: 400;
+
+  font-size: 1.45rem;
+
+  line-height: 1.2;
+
+  margin: 12px 0;
+
+}
+
+
+.blog-card p:not(.blog-category):not(.blog-number) {
+
+  color: #658090;
+
+  line-height: 1.65;
+
+}
+
+
+.featured-blog p:not(.blog-category):not(.blog-number) {
+
+  color: #c6e7f0;
+
+}
+
+
+.featured-blog a {
+
+  color: white;
+
+}
+
+
+.blog-card a {
+
+  margin-top: 25px;
+
+  color: var(--navy);
+
+  font-weight: 900;
+
+}
+
+
+/* =========================================
+   20. ABOUT SECTION
+========================================= */
+
+.about {
+
+  width: min(1180px, calc(100% - 40px));
+
+  margin: 30px auto 100px;
+
+  padding: 70px;
+
+  border-radius: 30px;
+
+  background: var(--navy);
+
+  color: white;
+
+  display: grid;
+
+  grid-template-columns: 1fr 0.8fr;
+
+  gap: 80px;
+
+}
+
+
+.about h2 {
+
+  font-size:
+    clamp(2.2rem, 4vw, 4rem);
+
+}
+
+
+.about h2 em {
+
+  color: #69d5f7;
+
+}
+
+
+.about > p {
+
+  align-self: center;
+
+  color: #c8e6ef;
+
+  line-height: 1.9;
+
+}
+
+
+/* =========================================
+   21. FOOTER
+========================================= */
+
+footer {
+
+  background: #031f34;
+
+  color: #b8d4df;
+
+  padding:
+    30px max(20px, calc((100% - 1180px) / 2));
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 20px;
+
+  font-size: 0.78rem;
+
+}
+
+
+.footer-brand {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  font-weight: 900;
+
+}
+
+
+.footer-brand img {
+
+  width: 40px;
+
+  height: 40px;
+
+  border-radius: 8px;
+
+}
+
+
+.footer-brand span {
+
+  color: white;
+
+}
+
+
+/* =========================================
+   22. TABLET RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 850px) {
+
+
+  /* Hide desktop navigation */
+
+  nav {
+
+    display: none;
+
+  }
+
+
+  /* Hero becomes one column */
+
+  .hero {
+
+    grid-template-columns: 1fr;
+
+    padding: 70px 0;
+
+  }
+
+
+  .hero-art {
+
+    height: 430px;
+
+  }
+
+
+  .hero h1 {
+
+    font-size:
+      clamp(3rem, 12vw, 5rem);
+
+  }
+
+
+  /* Section heading */
+
+  .section-heading {
+
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+
+  }
+
+
+  .section-intro {
+
+    justify-self: start;
+
+  }
+
+
+  /* Project cards */
+
+  .project-card {
+
+    grid-template-columns: 1fr;
+
+  }
+
+
+  .project-visual {
+
+    min-height: 330px;
+
+  }
+
+
+  /* Blog */
+
+  .blog-grid {
+
+    grid-template-columns: 1fr;
+
+  }
+
+
+  /* About */
+
+  .about {
+
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+
+    padding: 45px 30px;
+
+  }
+
+
+  /* Footer */
+
+  footer {
+
+    flex-direction: column;
+
+    text-align: center;
+
+  }
+
+}
+
+
+/* =========================================
+   23. MOBILE RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 520px) {
+
+
+  .navbar {
+
+    width:
+      calc(100% - 24px);
+
+  }
+
+
+  .brand span {
+
+    display: none;
+
+  }
+
+
+  .nav-button {
+
+    padding: 10px 13px;
+
+  }
+
+
+  .hero,
+  .section,
+  .about {
+
+    width:
+      calc(100% - 28px);
+
+  }
+
+
+  .hero-art {
+
+    transform: scale(0.82);
+
+    margin:
+      -30px 0;
+
+  }
+
+
+  .mini-stats {
+
+    gap: 14px;
+
+  }
+
+
+  .mini-stats span {
+
+    font-size: 0.62rem;
+
+  }
+
+
+  /* Remove side spacing around carousel */
+
+  .carousel-wrap {
+
+    padding: 0;
+
+  }
+
+
+  /* Hide arrow buttons on small screens */
+
+  .carousel-btn {
+
+    display: none;
+
+  }
+
+
+  .project-info {
+
+    padding:
+      35px 28px;
+
+  }
+
+}
